@@ -1,9 +1,9 @@
-// Your code here...// ==UserScript==
+// ==UserScript==
 // @name         Show node ids
 // @namespace    http://procentive.com
 // @version      0.1
 // @description  Displays form's node ids and attempts to auto fill forms with those ids
-// @author       You
+// @author       Paul Lindquist
 // @match        http://localhost:8082/trove_eclipse/treatment/edit.jsp*
 // @match        https://app.procentive.com/treatment/edit.jsp*
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js
