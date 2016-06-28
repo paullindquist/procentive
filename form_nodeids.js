@@ -1,20 +1,4 @@
-// ==UserScript==
-// @name         Show node ids
-// @namespace    http://procentive.com
-// @version      0.3
-// @description  Displays form's node ids and attempts to auto fill forms with those ids
-// @author       Paul Lindquist
-// @match        http://localhost:8082/trove_eclipse/treatment/edit.jsp*
-// @match        https://app.procentive.com/treatment/edit.jsp*
-// @require      https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js
-// @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js
-// @updateURL		https://github.com/paullindquist/procentive/blob/master/form_nodeids.js?raw=true
-// @grant        none
-// ==/UserScript==
-/* jshint -W097 */
-
-alert('here!');
-
+console.log('testing');
 var styles =  '<style type="text/css">' +
 '.box {' +
 '  position: fixed;' +
