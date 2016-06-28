@@ -12,7 +12,7 @@
 // @grant        none
 // ==/UserScript==
 /* jshint -W097 */
-console.log('made it here');
+
 var styles =  '<style type="text/css">' +
 '.box {' +
 '  position: fixed;' +
@@ -155,12 +155,12 @@ $(document).ready(function() {
 		});
 		$(frameBody).find('#autofill').on('click', function(evt) {
 			var nodeid;
-			var postfix = $(frameBody).find('#postfix').val();
-			$(frameBody).find('option:last').attr('selected', 'selected');
-			console.log($(frameBody).find('select option:last').val());
-			$(frameBody).find('input[type="checkbox"]').trigger('click');
-			$(frameBody).find('input[type="radio"]').trigger('click');
-			$(frameBody).find('input[type="text"], textarea').each(
+			var theForm = $(frameBody).find('#theform');
+			var postfix = $(theForm).find('#postfix').val();
+			$(theForm).find('option:last').attr('selected', 'selected');
+			$(theForm).find('input[type="checkbox"]').trigger('click');
+			$(theForm).find('input[type="radio"]').trigger('click');
+			$(theForm).find('input[type="text"], textarea').each(
 				function() {
 					if ($(this).val().trim().length === 0) {
 						nodeid = $(this).closest('[nodeid]').attr('nodeid');
