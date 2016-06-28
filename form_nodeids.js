@@ -8,6 +8,7 @@
 // @match        https://app.procentive.com/treatment/edit.jsp*
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js
+// @updateURL		https://github.com/paullindquist/procentive/blob/master/form_nodeids.js?raw=true
 // @grant        none
 // ==/UserScript==
 /* jshint -W097 */
