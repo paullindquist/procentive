@@ -11,7 +11,7 @@
 // @grant        none
 // ==/UserScript==
 /* jshint -W097 */
-
+console.log('made it here');
 var styles =  '<style type="text/css">' +
 '.box {' +
 '  position: fixed;' +
