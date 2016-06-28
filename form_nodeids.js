@@ -1,4 +1,4 @@
-console.log('testing');
+console.log('testing?');
 var styles =  '<style type="text/css">' +
 '.box {' +
 '  position: fixed;' +
