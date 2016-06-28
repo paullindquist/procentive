@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Show node ids
 // @namespace    http://procentive.com
-// @version      0.1
+// @version      0.3
 // @description  Displays form's node ids and attempts to auto fill forms with those ids
 // @author       Paul Lindquist
 // @match        http://localhost:8082/trove_eclipse/treatment/edit.jsp*
