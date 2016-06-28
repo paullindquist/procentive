@@ -13,6 +13,8 @@
 // ==/UserScript==
 /* jshint -W097 */
 
+alert('here!');
+
 var styles =  '<style type="text/css">' +
 '.box {' +
 '  position: fixed;' +
