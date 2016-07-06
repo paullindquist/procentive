@@ -1,4 +1,18 @@
-console.log('testing?');
+// ==UserScript==
+// @name         Show node ids
+// @namespace    http://procentive.com
+// @version      0.1
+// @description  Displays form's node ids and attempts to auto fill forms with those ids
+// @author       Paul Lindquist
+// @match        http://localhost:8082/trove_eclipse/treatment/edit.jsp*
+// @match        https://app.procentive.com/treatment/edit.jsp*
+// @require      https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js
+// @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js
+// @updateURL		https://github.com/paullindquist/procentive/blob/master/form_nodeids.js?raw=true
+// @grant        none
+// ==/UserScript==
+/* jshint -W097 */
+
 var styles =  '<style type="text/css">' +
 '.box {' +
 '  position: fixed;' +
@@ -142,7 +156,7 @@ $(document).ready(function() {
 		$(frameBody).find('#autofill').on('click', function(evt) {
 			var nodeid;
 			var theForm = $(frameBody).find('#theform');
-			var postfix = $(theForm).find('#postfix').val();
+			var postfix = $(theForm).find('#postfix').val() || '';
 			$(theForm).find('option:last').attr('selected', 'selected');
 			$(theForm).find('input[type="checkbox"]').trigger('click');
 			$(theForm).find('input[type="radio"]').trigger('click');
@@ -173,3 +187,4 @@ $(document).ready(function() {
 		});
 	});
 });
+
