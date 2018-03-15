@@ -6,17 +6,17 @@
 // @author       Paul Lindquist
 // @match        http://localhost:8082/trove_eclipse/treatment/edit.jsp*
 // @match        https://app.procentive.com/treatment/edit.jsp*
+// @match        https://office.procentive.com/treatment/edit.jsp*
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js
 // @require      https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js
 // @updateURL		https://github.com/paullindquist/procentive/blob/master/form_nodeids.js?raw=true
 // @grant        none
 // ==/UserScript==
 /* jshint -W097 */
-
 var styles =  '<style type="text/css">' +
 '.box {' +
 '  position: fixed;' +
-'  top: 20px;' +
+'  right: 20px;' +
 '  width: 300px;' +
 '  margin: 0 auto;' +
 '  -moz-box-shadow: 0 0.1em 0.5em rgba(0, 0, 0, 0.3), 0 0.1em 0.2em rgba(0, 0, 0, 0.4);' +
@@ -95,9 +95,9 @@ $(document).ready(function() {
 	$(document.getElementsByTagName('frame')[0].contentWindow.document).ready(function() {
 		var frameBody = window.frames[0].document.body;
 		$(frameBody).prepend(
-'	 <aside class="box" data-control="">' +
+'	 <aside class="box" data-control="" id="node_id_modal">' +
 '		<header>' +
-'            <h2>Form nodes</h2>' +
+'            <h2>Form nodes<span id="node_id_modal_close" style="float:right">x</span></h2>' +
 '		</header>' +
 '		<section>' +
 '			<p>Auto-fill form with node ids<br>' +
@@ -116,8 +116,6 @@ $(document).ready(function() {
 '        </section>' +
 '    </aside>');
 		$(frameBody).find('[data-control]').draggable();
-
-
 		$(frameBody).find('#disable').on('click', function(evt) {
 			if (clickingDisabled) {
 				$(this).text('Disable');
@@ -155,12 +153,12 @@ $(document).ready(function() {
 		});
 		$(frameBody).find('#autofill').on('click', function(evt) {
 			var nodeid;
-			var theForm = $(frameBody).find('#theform');
-			var postfix = $(theForm).find('#postfix').val() || '';
-			$(theForm).find('option:last').attr('selected', 'selected');
-			$(theForm).find('input[type="checkbox"]').trigger('click');
-			$(theForm).find('input[type="radio"]').trigger('click');
-			$(theForm).find('input[type="text"], textarea').each(
+			var postfix = $(frameBody).find('#postfix').val();
+			$(frameBody).find('option:last').attr('selected', 'selected');
+			console.log($(frameBody).find('select option:last').val());
+			$(frameBody).find('input[type="checkbox"]').trigger('click');
+			$(frameBody).find('input[type="radio"]').trigger('click');
+			$(frameBody).find('input[type="text"], textarea').each(
 				function() {
 					if ($(this).val().trim().length === 0) {
 						nodeid = $(this).closest('[nodeid]').attr('nodeid');
@@ -170,6 +168,9 @@ $(document).ready(function() {
 					}
 				}
 			);
+		});
+		$(frameBody).find('#node_id_modal_close').on('click', function(evt) {
+			$(frameBody).find('#node_id_modal').hide();
 		});
 		frameBody.addEventListener('click', function(evt) {
 			var idIndex;
@@ -187,4 +188,3 @@ $(document).ready(function() {
 		});
 	});
 });
-
