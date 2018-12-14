@@ -1,0 +1,20 @@
+#app-header{color:#000000;background-color:#ccd6e8;text-shadow: none;}
+#app-header-data-balance:before {
+	content: 'Payment or ';
+}
+app-header-data-name, #app-header-data-balance{color:#000000; text-shadow: none;}
+#app-header-secondary{ background:#ccd6e8;}
+
+#app-onetime-card, #app-onetime-check, #app-onetime-cash{background-color:#596273;}
+
+.xbtn-default {background-image: none;})
+
+.xbtn-default:hover {background-color: #5b5b5b; border-color: #ffffff;}
+
+.btn:hover, .xbtn:hover, .btn:focus, .xbtn:focus, .btn.focus, .focus.xbtn {color: #333; text-decoration: none; background-position: initial;}
+
+.xbtn-default {background-image: linear-gradient(to bottom, #ccd6e8 0%, #ccd6ee 100%);}
+
+#cardvault-inputs-amount {display: none;}
+
+.input-group-addon-safari-fix {display: none;}
