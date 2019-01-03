@@ -1,20 +1,82 @@
-#app-header{color:#000000;background-color:#ccd6e8;text-shadow: none;}
-#app-header-data-balance:before {
-	content: 'Payment or ';
-}
-app-header-data-name, #app-header-data-balance{color:#000000; text-shadow: none;}
-#app-header-secondary{ background:#ccd6e8;}
+::-ms-clear{margin-right:15px}
+input[type=text]::-ms-clear{margin-right:15px}
 
-#app-onetime-card, #app-onetime-check, #app-onetime-cash{background-color:#596273;}
+input.form-control,
+.input-group-addon{border-radius:0!important}
+body .open>.xbtn-default.dropdown-toggle,
+body .xbtn-default.active,
+body .xbtn-default:active,
+body .xbtn-default:hover{color:#fff;  background-color:#fb802d!important;  border-color:#4e4e4e;  box-shadow:none!important}
 
-.xbtn-default {background-image: none;})
+#slice-container{min-height:390px!important; width:90%}
+.app-notifier .notifier-bg{background:transparent}
 
-.xbtn-default:hover {background-color: #5b5b5b; border-color: #ffffff;}
+.panel{}
+.panel .panel-heading{background:none; color:#fff; padding:0}
+.panel .panel-heading h4+h4{display:none}
+.panel .panel-heading >h4{font-size:25px;font-style: italic;}
+.panel .panel-heading .text-success{color:#fff; background:#23B14D; padding:15px 15px; margin:0}
+.panel .panel-heading .text-danger{color:#fff; background:#F01823; padding:15px 15px; margin:0}
+.panel-body{}
+.panel-footer{}
+.panel-footer .btn{/* background:#eb6523; *//* color:#fff; *//* text-shadow:none; */}
 
-.btn:hover, .xbtn:hover, .btn:focus, .xbtn:focus, .btn.focus, .focus.xbtn {color: #333; text-decoration: none; background-position: initial;}
+.app-body{padding:15px;  background-color:#f1f1f1;  padding-top:0}
 
-.xbtn-default {background-image: linear-gradient(to bottom, #ccd6e8 0%, #ccd6ee 100%);}
+.check-info-group{margin-bottom:12px}
+.check-info-group >div.form-group-routing, .check-info-group >div.form-group-check{width:48%}
+.check-info-group >div:first-child{margin-left:0}
+.check-info-group >div:last-child{margin-right:0; float:right}
 
-#cardvault-inputs-amount {display: none;}
+#env-identifier{color:#333}
+#app-header{color:#eb6523; background-color:#f1f1f1; font-size:16px; border-bottom:none; padding:5px 15px 4px}
+#app-header-data-name, #app-header-data-balance{color:#333}
+#app-header-secondary{background:#F5F3F3}
+#app-header-buttons{text-align:center;  width:77%!important;  display:table;  table-layout:fixed;  border-collapse:separate;  margin-bottom:4px}
+#app-header-buttons >.xbtn:first-child:not(:last-child){border-right:0}
+#app-header-buttons .button-menu-item, .xbtn{display:table-cell;  float:none;  width:100%;  background:#f7712f;  border-radius:3px;  border-color:#b9501c;  font-size:15px}
+#app-header-buttons .button-menu-item:first-child:not(:last-child){border-bottom-right-radius:0;  border-top-right-radius:0}
+#app-header-buttons .button-menu-item:last-child:not(:first-child){border-bottom-left-radius:0;  border-top-left-radius:0}
+#app-header-buttons .button-menu-item img{display:none}
+#app-header-buttons .button-menu-item#app-header-button-onetime{}
+#app-header-buttons .button-menu-item#app-header-button-onetime:after{content:'ONE TIME'; display:block; font-size:12px}
+#app-header-buttons .button-menu-item#app-header-button-cardvault{}
+#app-header-buttons .button-menu-item#app-header-button-cardvault:after{content:'VAULT'; display:block; font-size:12px}
 
-.input-group-addon-safari-fix {display: none;}
+#app-onetime-card, #app-onetime-check, #app-onetime-cash{}
+
+#card-inputs-submit,
+#onetime-check-submit,
+#onetime-cash-submit,
+#cardvault-submit{padding:6px; background:#EB6523; border:none}
+
+#card-inputs-submit{margin-top:10px}
+#cardvault-create-card{border-radius:3px 3px 0 0}
+#payplan-create-check{border-radius:0 0 3px 3px}
+
+#onetime-check .card-info-payment{margin-top:10px}
+
+#card-inputs{}
+#cardInput,
+#onetime-check-account{padding-left:8px;  padding-right:28px;  margin-bottom:10px}
+#card-inputs .form-group input, #onetime-check-account,
+#onetime-check-account{border-radius:0; padding:0 8px}
+#cardnameInput{margin-top:10px}
+
+#tokenex-iframe-container #card-info-non-swipe{padding-top:10px}
+#card-info-non-swipe .card-info-payment{}
+#card-info-non-swipe .card-info-payment .form-group{margin:0 5px}
+#card-info-non-swipe .card-info-payment-cvvInput .form-group{margin-right:0 !important}
+#card-info-non-swipe .card-info-payment-zipInput .form-group{margin-right:0 !important; padding-left:5px !important}
+#card-info-non-swipe .card-info-payment:first-child .form-group{margin-left:0}
+#card-info-non-swipe .card-info-payment:last-child .form-group{margin-right:0}
+
+#app-onetime-options .btn-group{width:100%;  display:table;  table-layout:fixed;  border-collapse:separate}
+#app-onetime-options .btn-group >.xbtn{float:none; display:table-cell; width:1%; background:#f7712f; border-color:#c15c2a}
+#app-onetime-options .btn-group >.xbtn{border-right:0}
+
+#app-history{display:none}
+
+#tokenex{}
+#tokenex input:first-child{}
+#tokenex input:last-child{}
