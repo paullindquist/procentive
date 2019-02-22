@@ -4,7 +4,10 @@
 // @version      0.3.2
 // @description  Displays form's node ids and attempts to auto fill forms with those ids
 // @author       Paul Lindquist
+// @match        https://localhost:8082/trove_eclipse/treatment/edit.jsp*
+// @match        https://localhost:8081/trove_eclipse/treatment/edit.jsp*
 // @match        http://localhost:8082/trove_eclipse/treatment/edit.jsp*
+// @match        http://localhost:8081/trove_eclipse/treatment/edit.jsp*
 // @match        https://app.procentive.com/treatment/edit.jsp*
 // @match        https://office.procentive.com/treatment/edit.jsp*
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js
@@ -105,16 +108,21 @@ $(document).ready(function() {
 '			<input id="postfix" value=""><br/>' +
 '			<button id="autofill">Auto fill</button>' +
 '		</section>' +
-'       <section>' +
-'            <p>Enter CSV list of ids to highlight<br>' +
-'            Ids not found will be shown in the console <button>Show ids</button>' +
-'            <textarea id="nodeids"></textarea></p>' +
-'        </section>' +
-'        <section>' +
-'            <p>Turn off/on "Click to show": <button id="disable">Enable</button><br>' +
-'            Show/hide all: <button id="hideshow">Hide/Show</button></p>' +
-'        </section>' +
-'    </aside>');
+'   <section>' +
+'        <p>Enter CSV list of ids to highlight<br>' +
+'        Ids not found will be shown in the console <button>Show ids</button>' +
+'        <textarea id="nodeids"></textarea></p>' +
+'    </section>' +
+'   <section>' +
+'        <p>Get a CSV list of ids highlighted<br>' +
+'        Ids not found will be shown in the console <button>Get highlighted ids</button>' +
+'        <textarea id="getlist"></textarea></p>' +
+'    </section>' +
+'    <section>' +
+'        <p>Turn off/on "Click to show": <button id="disable">Enable</button><br>' +
+'        Show/hide all: <button id="hideshow">Hide/Show</button></p>' +
+'    </section>' +
+'   </aside>');
 		$(frameBody).find('[data-control]').draggable();
 		$(frameBody).find('#disable').on('click', function(evt) {
 			if (clickingDisabled) {
@@ -124,6 +132,18 @@ $(document).ready(function() {
 				$(this).text('Enable');
 				clickingDisabled = true;
 			}
+		});
+
+		var textar = $(frameBody).find('#getlist');
+		$(textar).parent().find('button').on('click', function() {
+			var ids = [];
+			var uniqueIds; // Not sure really why this is necessary..
+			var highlighted = window.frames[0].document.querySelectorAll('[data-nodeid]');
+			for (var i = 0; i < highlighted.length; i++) {
+				ids.push(highlighted[i].dataset.nodeid);
+			}
+			uniqueIds = Array.from(new Set(ids));
+			console.log(uniqueIds);
 		});
 
 		var textar = $(frameBody).find('#nodeids');
