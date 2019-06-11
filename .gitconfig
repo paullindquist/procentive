@@ -1,0 +1,10 @@
+[user]
+	name = Paul Lindquist
+	email = paul@procentive.com
+[url "https://"]
+	insteadOf = git://
+[core]
+	excludesfile = C:/Users/paul/.gitignore
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	st = status
